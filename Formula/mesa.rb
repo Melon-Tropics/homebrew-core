@@ -1,15 +1,15 @@
 class Mesa < Formula
   desc "Graphics Library"
   homepage "https://www.mesa3d.org/"
-  url "https://archive.mesa3d.org/mesa-20.1.3.tar.xz"
-  sha256 "9872b8d46bee822177ffbe4292addff7bdb84cefc1fe776b8e6b2881a8362bf1"
+  url "https://mesa.freedesktop.org/archive/mesa-20.1.4.tar.xz"
+  sha256 "6800271c2be2a0447510eb4e9b67edd9521859a4d565310617c4b359eb6799fe"
   head "https://gitlab.freedesktop.org/mesa/mesa.git"
 
   bottle do
     cellar :any
-    sha256 "0ca7669cebc82d5b59c9a41d1f9b5ebc9e07215e9297b7f7bad32f92182e920e" => :catalina
-    sha256 "2e70646a569df862685e6daabb723a83dae64b59d0ee2e26441c70f69948fdc5" => :mojave
-    sha256 "6827b0ade68f0cffc757741b9a9c735a76a357fe42a1231510d9bf6f284fe12d" => :high_sierra
+    sha256 "de2b15c1f403ad2ac5f387e5a28f175bced8685bf1156beaf5d726d9ae979756" => :catalina
+    sha256 "2b2c1cce0ee6c9bc5619165ad869c4321848b7a7ffa6e42c802e1b68938b86af" => :mojave
+    sha256 "8f9fbb495c5e259ea787cdded1d51d8816773974d52adedbe4b04e847ecbb3cb" => :high_sierra
   end
 
   depends_on "meson-internal" => :build
@@ -42,7 +42,7 @@ class Mesa < Formula
     resource("gears.c").stage(pkgshare.to_s)
 
     mkdir "build" do
-      system "meson", *std_meson_args, "..", "-Dbuildtype=plain", "-Db_ndebug=true",
+      system "meson", *std_meson_args, "..", "-Db_ndebug=true",
                       "-Dplatforms=surfaceless", "-Dglx=disabled"
       system "ninja"
       system "ninja", "install"

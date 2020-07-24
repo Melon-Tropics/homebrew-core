@@ -2,16 +2,16 @@ class Dcd < Formula
   desc "Auto-complete program for the D programming language"
   homepage "https://github.com/dlang-community/DCD"
   url "https://github.com/dlang-community/DCD.git",
-      :tag      => "v0.12.0",
-      :revision => "33dbd7653ecf830b735382e11d9bee66853a6dcf"
+      :tag      => "v0.13.0",
+      :revision => "808460a678d9c993d393c36e7eb06601a157efcf"
   license "GPL-3.0"
   head "https://github.com/dlang-community/dcd.git", :shallow => false
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "1db1c37fa9dd757c4a91439bb36c8bbfae7983b9cfcaaa82b7cefcb6dfc5237e" => :mojave
-    sha256 "932bb7fa259d950135a91973e7385e3fba9690cf899f65f0e1ffeb5b01d274e6" => :high_sierra
-    sha256 "92cc0dcf3830b9b5fe63abe6d54323f8c310147f280be907123fa69b1646d868" => :sierra
+    sha256 "0bc934ba115fe511af6c7d8f5cdfc1856ddbb7c65951d16b3ac6ba3dbef2c535" => :catalina
+    sha256 "0347c9bb620ae6cf490a5cc449cfd4cd7f3fe6842835a4b5b1b45acb84385a62" => :mojave
+    sha256 "a7ab66d97edfb4118c7764101020029f2ece6f245d363dcc9b4cd1e1da2125bc" => :high_sierra
   end
 
   depends_on "dmd" => :build
@@ -22,15 +22,17 @@ class Dcd < Formula
   end
 
   test do
+    port = free_port
+
     # spawn a server, using a non-default port to avoid
     # clashes with pre-existing dcd-server instances
     server = fork do
-      exec "#{bin}/dcd-server", "-p9167"
+      exec "#{bin}/dcd-server", "-p", port.to_s
     end
     # Give it generous time to load
     sleep 0.5
     # query the server from a client
-    system "#{bin}/dcd-client", "-q", "-p9167"
+    system "#{bin}/dcd-client", "-q", "-p", port.to_s
   ensure
     Process.kill "TERM", server
     Process.wait server

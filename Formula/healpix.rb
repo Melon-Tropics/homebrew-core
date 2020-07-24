@@ -1,17 +1,16 @@
 class Healpix < Formula
   desc "Hierarchical Equal Area isoLatitude Pixelization of a sphere"
   homepage "https://healpix.jpl.nasa.gov"
-  url "https://downloads.sourceforge.net/project/healpix/Healpix_3.60/Healpix_3.60_2019Dec18.tar.gz"
-  version "3.60"
-  sha256 "bf1797022fb57b5b8381290955e8c4161e3ca9b9d88e3e32d55b092a4a04b500"
+  url "https://downloads.sourceforge.net/project/healpix/Healpix_3.70/Healpix_3.70_2020Jul23.tar.gz"
+  version "3.70"
+  sha256 "8841f171f1e22e75ea130e12e5cdc5bcf85dbec79f9f67dd1bf27e99fd20b6d1"
   license "GPL-2.0-or-later"
-  revision 2
 
   bottle do
     cellar :any
-    sha256 "1d9b19c5fc8240ab950fcdc24fc04fcca6111fc649436a4eb46379c7fde2ab33" => :catalina
-    sha256 "9d12958cb9bc7cb46739f511a7d99aaf61dc4dda29f3db3db349c40ce005e7ec" => :mojave
-    sha256 "3dc30c638e5b12de86ffc99860cb444d10f42cca7786ead6ded1d4b061a45a69" => :high_sierra
+    sha256 "59fd161e08ea1758ed4bbc524d8f9008954ea6bb8e38131b7834ca36e719a9f5" => :catalina
+    sha256 "dd732e1a1d931be08b90dd7ba7676d77a929b1f431a1a937ab4d91a32d52c4cf" => :mojave
+    sha256 "f18787c3cf20536ee93762580b2537318da0601fd9cde0f28295363b59ee8a0a" => :high_sierra
   end
 
   depends_on "autoconf" => :build

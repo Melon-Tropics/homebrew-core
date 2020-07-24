@@ -1,16 +1,16 @@
 class Zim < Formula
   desc "Graphical text editor used to maintain a collection of wiki pages"
   homepage "https://zim-wiki.org/"
-  url "https://github.com/jaap-karssenberg/zim-desktop-wiki/archive/0.73.1.tar.gz"
-  sha256 "63ab38b3d4477ce29a66ec0094331eca1fc40def63a3fb256d613dc7fdb3a59e"
+  url "https://github.com/jaap-karssenberg/zim-desktop-wiki/archive/0.73.2.tar.gz"
+  sha256 "f002e63d7c131e317225c2912d5cc2065da90448f7ebd330ad4931a57fa45eda"
   license "GPL-2.0"
   head "https://github.com/jaap-karssenberg/zim-desktop-wiki.git"
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "10b5ee2401d6771811831f96576b631ccdf62a147c9d1fd2538a5a44800653b5" => :catalina
-    sha256 "10b5ee2401d6771811831f96576b631ccdf62a147c9d1fd2538a5a44800653b5" => :mojave
-    sha256 "10b5ee2401d6771811831f96576b631ccdf62a147c9d1fd2538a5a44800653b5" => :high_sierra
+    sha256 "bf934b65101cd8587b6e4767b27133a342c62cd0cb240cdf3b54ce73f0420088" => :catalina
+    sha256 "bf934b65101cd8587b6e4767b27133a342c62cd0cb240cdf3b54ce73f0420088" => :mojave
+    sha256 "bf934b65101cd8587b6e4767b27133a342c62cd0cb240cdf3b54ce73f0420088" => :high_sierra
   end
 
   depends_on "pkg-config" => :build
