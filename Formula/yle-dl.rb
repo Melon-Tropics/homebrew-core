@@ -4,13 +4,14 @@ class YleDl < Formula
   url "https://files.pythonhosted.org/packages/fa/bb/3e89fa9214d97d2d590fbde45c1ad9e9975aa5dc69a86f7d2d8d3fa20c85/yle-dl-20210808.tar.gz"
   sha256 "b6dbd89162bec4dc2e6c5eaa50c98eb32a09724417140d74f6630a214c52336a"
   license "GPL-3.0-or-later"
-  head "https://github.com/aajanki/yle-dl.git"
+  head "https://github.com/aajanki/yle-dl.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_big_sur: "1abfd53bec86856e959f687bb71b23ae01459e8cf6b5a8aaeb2d25f8b6ea691f"
     sha256 cellar: :any_skip_relocation, big_sur:       "374da8b0a09e1b48725341aad408fbd483cee68d8b1f747119650c5f4ea7c7c2"
     sha256 cellar: :any_skip_relocation, catalina:      "131c2664663464e07f059d7dbad05599fc30322a3923916c1bc914fe3a523eba"
     sha256 cellar: :any_skip_relocation, mojave:        "9d18878bc755d839901e9431e27dc0913ab28881c66b8dc93361106bc3623cc7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1625aad885be75572725cd9e8b13443b319af28f75094ca11f6bc3786e357e22"
   end
 
   depends_on "ffmpeg"

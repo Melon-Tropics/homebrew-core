@@ -1,17 +1,17 @@
 class Waypoint < Formula
   desc "Tool to build, deploy, and release any application on any platform"
   homepage "https://www.waypointproject.io/"
-  url "https://github.com/hashicorp/waypoint/archive/v0.4.2.tar.gz"
-  sha256 "7820eae69bb78ebd735ec1f019c0b9874e4217c383d4d9945a6803e3bcb97927"
+  url "https://github.com/hashicorp/waypoint/archive/v0.5.1.tar.gz"
+  sha256 "7ae5d969f019c2c5767c2d0251197c33c23058d4cf87329d96a36504c78ded97"
   license "MPL-2.0"
   head "https://github.com/hashicorp/waypoint.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "3fbe1e301c256638a523f58da6c9f8e9f8f5c8df887c531e93e87090927653e6"
-    sha256 cellar: :any_skip_relocation, big_sur:       "d5d4edd5f4e8c5d01860af62a16eca028b18597fbcd009b9df86c56c87c5f1b6"
-    sha256 cellar: :any_skip_relocation, catalina:      "6e7c1fbbecd377da80139d1e2d066ad1caa0ab9393ed49868a173dc8dba016ec"
-    sha256 cellar: :any_skip_relocation, mojave:        "82404da2cf00bd24aea288f4e96879b571449648646acb093f0f5723e6c1371c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a42d7c3ec6cb412adac46fa5108db2b8ea919f76976c1f6dc158833de149bc58"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "5edc6cb128b74b9af818c59bebea28acd9715c4201a97b5be9f4993db62fc3d6"
+    sha256 cellar: :any_skip_relocation, big_sur:       "8e0694e9b508aedb9abc96ee45204b271715a7f809553248ce423ab9ad191ca5"
+    sha256 cellar: :any_skip_relocation, catalina:      "e3b6f9cd8d70de2af1b9537f9eb2ca87bae9eecb66f6f71ef1ea878c31415936"
+    sha256 cellar: :any_skip_relocation, mojave:        "d20a5d1a561bf58ecedad4515f5ca3c11cd52ba6420d8378b10eb76528f1d5ef"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0d5a030f847c342b5b8b5a06531e37b794ebeebac241abc08becadc72c57b486"
   end
 
   depends_on "go" => :build

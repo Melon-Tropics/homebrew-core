@@ -2,11 +2,11 @@ class ClojureLsp < Formula
   desc "Language Server (LSP) for Clojure"
   homepage "https://github.com/clojure-lsp/clojure-lsp"
   url "https://github.com/clojure-lsp/clojure-lsp.git",
-      tag:      "2021.06.01-16.19.44",
-      revision: "d17d1347249477ee534e5df1030ff1b36c1e2ecb"
-  version "20210601T161944"
+      tag:      "2021.08.16-19.02.30",
+      revision: "226fa911d10d332a2b1df9201cc8565a3002f642"
+  version "20210816T190230"
   license "MIT"
-  head "https://github.com/clojure-lsp/clojure-lsp.git"
+  head "https://github.com/clojure-lsp/clojure-lsp.git", branch: "master"
 
   livecheck do
     url :stable
@@ -18,11 +18,11 @@ class ClojureLsp < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "f7553eeef175e7fab98d3513a993162cf00a940575de89b1d6e802cc4a6fc5ae"
-    sha256 cellar: :any_skip_relocation, big_sur:       "edc2a4d6e3914895683c101f92e887b0d573feb9215972f0f178473b0f786b4c"
-    sha256 cellar: :any_skip_relocation, catalina:      "166cbb7fbfe32ac69f9f77669df0ccef5f9fc4c161b7678e7c90c1d4585cc141"
-    sha256 cellar: :any_skip_relocation, mojave:        "faa438a6e4f69f39e45c5b21686ed2d926cad60e0c3a0e380126b18675ee7517"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2920102efcd31062c39b3830e25d287e04797bb81eec0f51f8707f43a0e4144f"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "659173e001c1786eb50a9c8beef74c0ba6280c2b1ac76595e123aad636a3e3b1"
+    sha256 cellar: :any_skip_relocation, big_sur:       "202351955dff5b6e65ebb1748c81514cd0dd3d3e9eb9d20a1d85733f6b841c41"
+    sha256 cellar: :any_skip_relocation, catalina:      "199800115e7f86fe0a9bfd5f623603cb929de928fc387d227ab72166af7ac042"
+    sha256 cellar: :any_skip_relocation, mojave:        "d833ec0f89a391ad22b56a4bae511b22e94fefe23733bac2150d4bc3f284d237"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c8f150b92e9adc756bfa28bc955f719d7c429256543eaeed02eda13d5a793daf"
   end
 
   depends_on "clojure" => :build

@@ -1,14 +1,13 @@
 class Ghc < Formula
   desc "Glorious Glasgow Haskell Compilation System"
   homepage "https://haskell.org/ghc/"
-  url "https://downloads.haskell.org/~ghc/8.10.5/ghc-8.10.5-src.tar.xz"
-  sha256 "f10941f16e4fbd98580ab5241b9271bb0851304560c4d5ca127e3b0e20e3076f"
+  url "https://downloads.haskell.org/~ghc/8.10.7/ghc-8.10.7-src.tar.xz"
+  sha256 "e3eef6229ce9908dfe1ea41436befb0455fefb1932559e860ad4c606b0d03c9d"
   # We bundle a static GMP so GHC inherits GMP's license
   license all_of: [
     "BSD-3-Clause",
     any_of: ["LGPL-3.0-or-later", "GPL-2.0-or-later"],
   ]
-  revision 2
 
   livecheck do
     url "https://www.haskell.org/ghc/download.html"
@@ -16,11 +15,11 @@ class Ghc < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_big_sur: "0c7958caa08a07a4fe396dec70c689979ce4ed96e7d65f692b20219cc4e0f563"
-    sha256                               big_sur:       "485d899248c0773ba3dd627998242774ad0b757ed5ff5101fe1aabd8e8ab0032"
-    sha256                               catalina:      "65cecde33e435731d93f0354fe434ac075035fdcc663ca66c00f6c3319248372"
-    sha256                               mojave:        "03ec1c4dde314d08a75723e2434fa29eb5ba9b765ca813a4d026806c3d1b5146"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4ae4ffb34fa08b05645e8f039d7812d3d63b9c1c0f54203a326570b95b194d52"
+    sha256 cellar: :any,                 arm64_big_sur: "dc95f7ac96f96622d0ba846d38355f944e16a4c06304a12f5549dde9de422c3d"
+    sha256                               big_sur:       "c008431d9fdd2d56c97cd22134c776c9e2c3f322a4e8ebb9bb5808750c7ce1c2"
+    sha256                               catalina:      "9d7309d7f86d20b3c1d7c3ec74f7c77b060910b52d3550c2f6f17312da0d0d47"
+    sha256                               mojave:        "6f23a42bf1ad6b4ef103c29c09033117e27dbd85f752cdcdc33220cfd505c445"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5ea70cb015d4f7d1c7aa25cca023b93dd254173964f6497ead92dda3602b961c"
   end
 
   depends_on "python@3.9" => :build
@@ -43,42 +42,27 @@ class Ghc < Formula
     depends_on "gmp" => :build
   end
 
-  # https://www.haskell.org/ghc/download_ghc_8_10_4.html#macosx_x86_64
+  # https://www.haskell.org/ghc/download_ghc_8_10_7.html#macosx_x86_64
   # "This is a distribution for Mac OS X, 10.7 or later."
   # A binary of ghc is needed to bootstrap ghc
   resource "binary" do
     on_macos do
       if Hardware::CPU.intel?
-        # We intentionally bootstrap with 8.10.4 on Intel, as 8.10.5 leads to build failure on Mojave
-        url "https://downloads.haskell.org/~ghc/8.10.4/ghc-8.10.4-x86_64-apple-darwin.tar.xz"
-        sha256 "725ecf6543e63b81a3581fb8c97afd21a08ae11bc0fa4f8ee25d45f0362ef6d5"
+        url "https://downloads.haskell.org/~ghc/8.10.7/ghc-8.10.7-x86_64-apple-darwin.tar.xz"
+        sha256 "287db0f9c338c9f53123bfa8731b0996803ee50f6ee847fe388092e5e5132047"
       else
-        url "https://downloads.haskell.org/ghc/8.10.5/ghc-8.10.5-aarch64-apple-darwin.tar.xz"
-        sha256 "03684e70ff03d041b9a4e0f84c177953a241ab8ec7a028c72fa21ac67e66cb09"
+        url "https://downloads.haskell.org/ghc/8.10.7/ghc-8.10.7-aarch64-apple-darwin.tar.xz"
+        sha256 "dc469fc3c35fd2a33a5a575ffce87f13de7b98c2d349a41002e200a56d9bba1c"
       end
     end
 
     on_linux do
-      url "https://downloads.haskell.org/~ghc/8.10.5/ghc-8.10.5-x86_64-deb9-linux.tar.xz"
-      sha256 "15e71325c3bdfe3804be0f84c2fc5c913d811322d19b0f4d4cff20f29cdd804d"
+      url "https://downloads.haskell.org/~ghc/8.10.7/ghc-8.10.7-x86_64-deb9-linux.tar.xz"
+      sha256 "ced9870ea351af64fb48274b81a664cdb6a9266775f1598a79cbb6fdd5770a23"
     end
-  end
-
-  # fix ghci lib loading
-  # https://gitlab.haskell.org/ghc/ghc/-/issues/19763
-  patch do
-    url "https://github.com/ghc/ghc/commit/296f25fa5f0fce033b529547e0658076e26f4cda.patch?full_index=1"
-    sha256 "20556b7b4ffd6cf3eb35d274621ed717b46f12acf5084d4413071182af969108"
   end
 
   def install
-    # Fix doc build error. Remove at version bump.
-    # https://gitlab.haskell.org/ghc/ghc/-/issues/19962
-    inreplace "docs/users_guide/conf.py" do |s|
-      s.gsub! "'preamble': '''", "'preamble': r'''"
-      s.gsub! "\\setlength{\\\\tymin}{45pt}", "\\setlength{\\tymin}{45pt}"
-    end
-
     ENV["CC"] = ENV.cc
     ENV["LD"] = "ld"
     ENV["PYTHON"] = Formula["python@3.9"].opt_bin/"python3"

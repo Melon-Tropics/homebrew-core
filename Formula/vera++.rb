@@ -15,9 +15,12 @@ class Veraxx < Formula
     sha256 cellar: :any_skip_relocation, sierra:        "3a261328afd43c8c38f33802ced93557c58ae8903dab90e0ca4546004003447f"
     sha256 cellar: :any_skip_relocation, el_capitan:    "76dcb0b9340b8fc9413fc848dff27e8805d7b2a9c63d5128fc83ce5bd3bd1cd5"
     sha256 cellar: :any_skip_relocation, yosemite:      "a2620392e9204964ecd0ec0bc6b90268d27e5e2a28ef304aff3d3719ed058b80"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ad710a6d70551b2d74732c9774a926f8a3c63f2db1aa87373701cfc90039d996"
   end
 
   depends_on "cmake" => :build
+
+  uses_from_macos "tcl-tk"
 
   # Use prebuilt docs to avoid need for pandoc
   resource "doc" do
@@ -71,17 +74,24 @@ class Veraxx < Formula
       system "make", "install"
     end
 
-    system "cmake", ".",
-           "-DVERA_USE_SYSTEM_BOOST:BOOL=ON", "-DBoost_USE_STATIC_LIBS:BOOL=ON",
-           "-DLUA_INCLUDE_DIR:PATH=#{buildpath}/3rdParty/include",
-           "-DLUA_LIBRARIES:PATH=#{buildpath}/3rdParty/lib/liblua.a",
-           "-DLUA_LIBRARY:PATH=#{buildpath}/3rdParty/lib/liblua.a",
-           "-DLUABIND_INCLUDE_DIR:PATH=#{buildpath}/3rdParty/include",
-           "-DLUABIND_LIBRARIES:PATH=#{buildpath}/3rdParty/lib/libluabind.a",
-           "-DLUABIND_LIBRARY:PATH=#{buildpath}/3rdParty/lib/libluabind.a",
-           "-DBoost_INCLUDE_DIR:PATH=#{buildpath}/3rdParty/include",
-           "-DBoost_LIBRARY_DIR_RELEASE:PATH=#{buildpath}/3rdParty/lib",
-           *std_cmake_args
+    args = std_cmake_args + %W[
+      -DVERA_USE_SYSTEM_BOOST:BOOL=ON
+      -DBoost_USE_STATIC_LIBS:BOOL=ON
+      -DLUA_INCLUDE_DIR:PATH=#{buildpath}/3rdParty/include
+      -DLUA_LIBRARIES:PATH=#{buildpath}/3rdParty/lib/liblua.a
+      -DLUA_LIBRARY:PATH=#{buildpath}/3rdParty/lib/liblua.a
+      -DLUABIND_INCLUDE_DIR:PATH=#{buildpath}/3rdParty/include
+      -DLUABIND_LIBRARIES:PATH=#{buildpath}/3rdParty/lib/libluabind.a
+      -DLUABIND_LIBRARY:PATH=#{buildpath}/3rdParty/lib/libluabind.a
+      -DBoost_INCLUDE_DIR:PATH=#{buildpath}/3rdParty/include
+      -DBoost_LIBRARY_DIR_RELEASE:PATH=#{buildpath}/3rdParty/lib
+    ]
+    on_linux do
+      # Disable building Python rules support since vera++ needs Python 2.
+      # Revisit on release with Python 3: https://bitbucket.org/verateam/vera/issues/108/migrate-to-python-3
+      args << "-DVERA_PYTHON=OFF"
+    end
+    system "cmake", ".", *args
     system "make", "install"
 
     resource("doc").stage do

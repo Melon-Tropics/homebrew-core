@@ -3,17 +3,19 @@ require "language/node"
 class Truffle < Formula
   desc "Development environment, testing framework and asset pipeline for Ethereum"
   homepage "https://trufflesuite.com"
-  url "https://registry.npmjs.org/truffle/-/truffle-5.4.2.tgz"
-  sha256 "14d39217ad146fbf403c2e19a2f4cce43dcc3608d397d171f34602c69f187a29"
+  url "https://registry.npmjs.org/truffle/-/truffle-5.4.8.tgz"
+  sha256 "cdd5036bcd9d074af4cc99d693d60d11585aaf594b4cfc931bad832327afa9f3"
   license "MIT"
 
   bottle do
-    sha256 arm64_big_sur: "b27596eb084d98167858eb09bc42ac0c63a52bb55ea4061f416da0e4c3b5ee14"
-    sha256 big_sur:       "ec2f4faf1b68a7e810d46476b9214d12c884ecaa0bb9378b26d118125371650b"
-    sha256 catalina:      "2c182325584bd5dcd013c61ac50cecd6a41490255fdb2fbf043ab297d78e02d9"
-    sha256 mojave:        "371f862ca3584732e155953d816355a8ecb0db7c45170cc97c884efcdb165692"
+    sha256 big_sur:  "9e0902466bc7db35e4860686daceb4f03ad137c98baa934d2450f8068a76eda3"
+    sha256 catalina: "8f8c4846414e94ea16898fd8d3258ca3f7b23e1cd53345348f84840801aeb9a6"
+    sha256 mojave:   "593da748f15083a9b1ef3da0983ac4855e274a56afb5d679f3e407c6efd4d3af"
   end
 
+  # the formula does not build any binaries for arm64
+  # see upstream issue report, https://github.com/trufflesuite/truffle/issues/4266
+  depends_on arch: :x86_64
   depends_on "node"
 
   def install

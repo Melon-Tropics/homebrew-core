@@ -1,23 +1,23 @@
 class Step < Formula
   desc "Crypto and x509 Swiss-Army-Knife"
   homepage "https://smallstep.com"
-  url "https://github.com/smallstep/cli/releases/download/v0.16.1/step_0.16.1.tar.gz"
-  sha256 "09a90d5731c98e96e63af754a9bfcc00f6d0584f954505c305b52974094dc430"
+  url "https://github.com/smallstep/cli/releases/download/v0.17.1/step_0.17.1.tar.gz"
+  sha256 "e47c889314093d499a560aacd8e336134af77bffaafe21b55d804357d075efce"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "e3150b89b4c083e63b7330417b7d5ebc4e1ac884fced45cefa251a9058f5c2f9"
-    sha256 cellar: :any_skip_relocation, big_sur:       "ffc856f090795a346911b0ec07ee654ae142d7fa7beca51d91e54ab0233f481b"
-    sha256 cellar: :any_skip_relocation, catalina:      "7cb397f326d74fcb368d4fcd76653fd5cc6d0c334d79f3afe2d1fbbeb030ffd3"
-    sha256 cellar: :any_skip_relocation, mojave:        "d248be3b4c75184c52f5937381c544898b97ea08017b22f669603e6ae7b8670e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "867edbfb1f69e5128fed3cbdaf343a4691b16db576bec6f7df8531d9f8973c91"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "bdf26f0b0ee58be99c1db838a7bfe5a890e8e703dacf40434a47b54557f93762"
+    sha256 cellar: :any_skip_relocation, big_sur:       "ac72b71cfd7810d31add2766dfc299b07849feeac1e83a45128e02c103fc0720"
+    sha256 cellar: :any_skip_relocation, catalina:      "89368c7f4acd2d61c677d5f71170f6b415f40ee3fbce530aed1ad04fdf02f054"
+    sha256 cellar: :any_skip_relocation, mojave:        "197f47f56213f723686ac6564f524df66129501f60ca7d354b9dc3fb10b6df90"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e609139929549883ec7e8f29a35922a637d5227dadce300f3d142e8c14588dd8"
   end
 
   depends_on "go" => :build
 
   resource "certificates" do
-    url "https://github.com/smallstep/certificates/releases/download/v0.16.0/step-ca_0.16.0.tar.gz"
-    sha256 "d4f333bd972eb5b6bd2cf4a4fa403574e6dceffaa54109c0f8251cf37f1dfa48"
+    url "https://github.com/smallstep/certificates/releases/download/v0.17.1/step-ca_0.17.1.tar.gz"
+    sha256 "6ff7d52b3e8cb1972242701ac348d00248844e4efb68a8b829311986462a2b7e"
   end
 
   def install

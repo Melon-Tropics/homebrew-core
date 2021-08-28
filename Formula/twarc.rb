@@ -3,16 +3,16 @@ class Twarc < Formula
 
   desc "Command-line tool and Python library for archiving Twitter JSON"
   homepage "https://github.com/DocNow/twarc"
-  url "https://files.pythonhosted.org/packages/1a/46/70536d71f7d44803c3ab106b5a732387ae842ee1266e18b4c29dd20280c3/twarc-2.4.0.tar.gz"
-  sha256 "875f6a80316ed07b22305cc81808432b32d3189482906e96c253438a305a8249"
+  url "https://files.pythonhosted.org/packages/ed/73/8262d4c13fcfba0b5b59f04099e7430985c6aceb9464b86e858b5c158d46/twarc-2.4.3.tar.gz"
+  sha256 "b970611d99ee17026b29d8d4f45d7f41e35947f5b37790c7d2f5fadc14355917"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "a19fc5c61a8f6c91ef9f5da152f849a0f0318d3740f809a9e42dbf78739c68d9"
-    sha256 cellar: :any_skip_relocation, big_sur:       "19202f43dcba2706d6f45c4c7100b4e30cb99aed8957243f33b0235b81276f64"
-    sha256 cellar: :any_skip_relocation, catalina:      "86b2491bf842c89d6566fbad32637635add841c8e962e8c8b2ed69a3f0396307"
-    sha256 cellar: :any_skip_relocation, mojave:        "55e8f123a85f21d128d173e76da6287a9e585046b777fcb04f45077935b1331b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8d9864abdf6f154c75096494876c603d0f9a9fa818117a40c4415645b67cf214"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "e91949b0b5262bbbf4be4d72b7e3d2b3fbcbb64cd78cf8f9063c2e984b58010c"
+    sha256 cellar: :any_skip_relocation, big_sur:       "1a3e95893322dcb843e2903a98a1cd6fda781f8c44997963b0b8f8002478ed41"
+    sha256 cellar: :any_skip_relocation, catalina:      "15f00a7ee7e9b3b645eb03468dfccdf8a817c5a40da213c3c493aa549575e1e3"
+    sha256 cellar: :any_skip_relocation, mojave:        "d40e7b88c1580b30b9a0cf4f0f6d90f978adcd0036c3d228cf82caefffcea78e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "582644202d5da5dff2fcc43f38a5fb1d28cadc3809f20836694093ef3977bc1f"
   end
 
   depends_on "python@3.9"
@@ -79,8 +79,8 @@ class Twarc < Formula
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/7f/e6/23e3f15ff29970dd64065a9a27bc809b1df727f7f9f6dfa3e36cf7975e58/tqdm-4.62.0.tar.gz"
-    sha256 "3642d483b558eec80d3c831e23953582c34d7e4540db86d9e5ed9dad238dabc6"
+    url "https://files.pythonhosted.org/packages/48/a9/06793044a329e3d80489d5bf2153924f9463c08beec7f8ce4d20efd3cfbc/tqdm-4.62.1.tar.gz"
+    sha256 "35540feeaca9ac40c304e916729e6b78045cbbeccd3e941b2868f09306798ac9"
   end
 
   resource "urllib3" do

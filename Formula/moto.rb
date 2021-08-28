@@ -3,16 +3,16 @@ class Moto < Formula
 
   desc "Mock AWS services"
   homepage "http://getmoto.org/"
-  url "https://files.pythonhosted.org/packages/bc/10/7a01a1a44153a80b18aa12c3052512b71d4beff440ba50c0ed04882f36bc/moto-2.2.2.tar.gz"
-  sha256 "b0b5a9179bcb4833fd2f67e31e44004d7ec7687106ab22150cbeac7e6e97b725"
+  url "https://files.pythonhosted.org/packages/be/e7/ec32d675fdfc22324c6bc7680d7789a382029dd23b483c186e8050e74195/moto-2.2.6.tar.gz"
+  sha256 "21c838b63f44e24b9b5015a2cdcc5be7c1e1004e58a69fb7cac71383bce34535"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_big_sur: "d012d83ae5d14a88c7743c9546d76d6393fd0b17d916c1dfef1e65a40d72a84d"
-    sha256 cellar: :any,                 big_sur:       "aad43c28bc3e65ca0cfc5ea502ecf5b9357e25f106b3c52f5e1cfb86c63937fa"
-    sha256 cellar: :any,                 catalina:      "2d073424c7f04a7412cd9207e5bedf0a15834650dea7817be62d7eb3c527e53f"
-    sha256 cellar: :any,                 mojave:        "9caab75d3f02798ba25e30785ba1bdf6d4bcd1dea698b8685d752ac62da03d8e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "41f951c842726ec6ff8b617d6ed1c1891c30125cb0f6cada861548c71dd06f94"
+    sha256 cellar: :any,                 arm64_big_sur: "902331b0600b7334aea7826e3c573d7b47d22142722cfe45d1d6a22f3cf012fb"
+    sha256 cellar: :any,                 big_sur:       "8fbe6b584c4a1a20cae2426ba6c49b67e06d3a3de53e8455f43494b9ccf8801d"
+    sha256 cellar: :any,                 catalina:      "d70d25af6e91abf5f561d9fc3940095303fc01f21c1e3f1e86fafdf5b0d32fc3"
+    sha256 cellar: :any,                 mojave:        "562348b51730ffc2bb2375d52edd600ec366e4763c674232e8339aa4c9d3b83b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bedb6b3954534559df2bed2d17275bbe319bde2707dfc66102fc2131609eac02"
   end
 
   depends_on "rust" => :build # for cryptography
@@ -34,13 +34,13 @@ class Moto < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/75/e4/413f948020c99cfe4d98163275e38b94c6ae21c3958da37514e78c6d7d28/boto3-1.18.17.tar.gz"
-    sha256 "5e5f60ece9b73d48f668bef56ddcde716f013b48a62fdf9c5eac9512a5981136"
+    url "https://files.pythonhosted.org/packages/23/e5/c73172de2c65e9a29b999202e483e223f1f7d30b89e024c8123359adfd7e/boto3-1.18.31.tar.gz"
+    sha256 "59445d0e1d55c8c9675697ea41c98a0d82089a4be3076ea60e3a87cbe94dc141"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/8d/f4/c98c4b194ac9552de7741372bcbdcd290d93fda377e527546e9868865948/botocore-1.21.17.tar.gz"
-    sha256 "a0d64369857d86b3a6d01b0c5933671c2394584311ce3af702271ba221b09afa"
+    url "https://files.pythonhosted.org/packages/97/d0/89774e883441090c386be4ffa50320adde526b266f0b50d5df9725dad301/botocore-1.21.31.tar.gz"
+    sha256 "58cd315e2ae0971acdb3d7cda9c9c36b41c73181f41943a7443812d6d3c9ad18"
   end
 
   resource "certifi" do
@@ -69,8 +69,8 @@ class Moto < Formula
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/9b/77/461087a514d2e8ece1c975d8216bc03f7048e6090c5166bc34115afdaa53/cryptography-3.4.7.tar.gz"
-    sha256 "3d10de8116d25649631977cb37da6cbdd2d6fa0e0281d014a5b7d337255ca713"
+    url "https://files.pythonhosted.org/packages/cc/98/8a258ab4787e6f835d350639792527d2eb7946ff9fc0caca9c3f4cf5dcfe/cryptography-3.4.8.tar.gz"
+    sha256 "94cc5ed4ceaefcbe5bf38c8fba6a21fc1d365bb8fb826ea1688e3370b2e24a1c"
   end
 
   resource "docker" do
@@ -101,11 +101,6 @@ class Moto < Formula
   resource "idna" do
     url "https://files.pythonhosted.org/packages/ea/b7/e0e3c1c467636186c39925827be42f16fee389dc404ac29e930e9136be70/idna-2.10.tar.gz"
     sha256 "b307872f855b18632ce0c21c5e45be78c0ea7ae4c15c828c20788b26921eb3f6"
-  end
-
-  resource "importlib-metadata" do
-    url "https://files.pythonhosted.org/packages/58/f1/9b77b8aa38482b7c284b8f8eda8b99d3b1103a280f107bab362a1c518c92/importlib_metadata-4.6.3.tar.gz"
-    sha256 "0645585859e9a6689c523927a5032f2ba5919f1f7d0e84bd4533312320de1ff9"
   end
 
   resource "itsdangerous" do
@@ -234,8 +229,8 @@ class Moto < Formula
   end
 
   resource "websocket-client" do
-    url "https://files.pythonhosted.org/packages/bc/a6/5ef697df40e56459de75b57f302f2da92a51269925282a08e4eb76b16fb6/websocket-client-1.1.1.tar.gz"
-    sha256 "4cf754af7e3b3ba76589d49f9e09fd9a6c0aae9b799a89124d656009c01a261d"
+    url "https://files.pythonhosted.org/packages/4e/8f/b5c45af5a1def38b07c09a616be932ad49c35ebdc5e3cbf93966d7ed9750/websocket-client-1.2.1.tar.gz"
+    sha256 "8dfb715d8a992f5712fff8c843adae94e22b22a99b2c5e6b0ec4a1a981cc4e0d"
   end
 
   resource "Werkzeug" do
@@ -253,45 +248,16 @@ class Moto < Formula
     sha256 "50d8c638ed7ecb88d90561beedbf720c9b4e851a9fa6c47ebd64e99d166d8a21"
   end
 
-  resource "zipp" do
-    url "https://files.pythonhosted.org/packages/3a/9f/1d4b62cbe8d222539a84089eeab603d8e45ee1f897803a0ae0860400d6e7/zipp-3.5.0.tar.gz"
-    sha256 "f5812b1e007e48cff63449a5e9f4e7ebea716b4111f9c4f9a645f91d579bf0c4"
-  end
-
   def install
     virtualenv_install_with_resources
   end
 
-  plist_options manual: "moto_server"
-
-  def plist
-    <<~EOS
-      <?xml version="1.0" encoding="UTF-8"?>
-      <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-      <plist version="1.0">
-        <dict>
-          <key>KeepAlive</key>
-          <dict>
-            <key>SuccessfulExit</key>
-            <false/>
-          </dict>
-          <key>Label</key>
-          <string>#{plist_name}</string>
-          <key>ProgramArguments</key>
-          <array>
-            <string>#{opt_bin}/moto_server</string>
-          </array>
-          <key>RunAtLoad</key>
-          <true/>
-          <key>WorkingDirectory</key>
-          <string>#{var}</string>
-          <key>StandardErrorPath</key>
-          <string>#{var}/log/moto.log</string>
-          <key>StandardOutPath</key>
-          <string>#{var}/log/moto.log</string>
-        </dict>
-      </plist>
-    EOS
+  service do
+    run [opt_bin/"moto_server"]
+    keep_alive true
+    working_dir var
+    log_path var/"log/moto.log"
+    error_log_path var/"log/moto.log"
   end
 
   test do

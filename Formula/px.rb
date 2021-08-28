@@ -4,16 +4,16 @@ class Px < Formula
   desc "Ps and top for human beings (px / ptop)"
   homepage "https://github.com/walles/px"
   url "https://github.com/walles/px.git",
-      tag:      "1.5.0",
-      revision: "4f3fa7cfea1ab9702bdd97a5f94f4dbf41efa0d8"
+      tag:      "1.5.4",
+      revision: "640a87a9c4a16246f0027a04b0884e1fdac0f7ef"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "d7c7267f2871f359ef8013ca62152be7f3639bb6ca02a228d8a4a5652d007a84"
-    sha256 cellar: :any_skip_relocation, big_sur:       "8e3afa7b3a6b372cbce59867b7b14d2b1da109ed5bfac1e26ee164335226ce67"
-    sha256 cellar: :any_skip_relocation, catalina:      "40582fc7dc8210beac9c55a2e3281ae0010e1145011c27e2b5746fb092c38889"
-    sha256 cellar: :any_skip_relocation, mojave:        "7369a29aeea6c9c25c65a2074713df44d9cdf9532b7308bc578cd03b6cde9b94"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "253ae023972859e1e5cad20268f192163e388110580ac941a46727d024d17d27"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "9eb08f316d85740de9a60f9e1ba9d9a29fcf8cbcef94af3164d3b42200ff8739"
+    sha256 cellar: :any_skip_relocation, big_sur:       "66db0f1fc9229b20269e4112499cb61db1571cdea764681077cb286874c8b263"
+    sha256 cellar: :any_skip_relocation, catalina:      "e75d83def73aa21157724a5990dbeaa9c1274c8cd621200b2dc8f0ebffe5f9ad"
+    sha256 cellar: :any_skip_relocation, mojave:        "f021cb0dfbf9c534618f0068ed7adb6d0bb4a08c28d2e2dc49d0d8f0a5ac532b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1d2ca002df6ec16faebc19354dfe4467b4ba25fee549c0c35201b712b84e73ac"
   end
 
   depends_on "python@3.9"
@@ -23,8 +23,8 @@ class Px < Formula
 
   # For updates: https://pypi.org/project/python-dateutil/#files
   resource "python-dateutil" do
-    url "https://files.pythonhosted.org/packages/be/ed/5bbc91f03fa4c839c4c7360375da77f9659af5f7086b7a7bdda65771c8e0/python-dateutil-2.8.1.tar.gz"
-    sha256 "73ebfe9dbf22e832286dafa60473e4cd239f8592f699aa5adaf10050e6e1823c"
+    url "https://files.pythonhosted.org/packages/4c/c4/13b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9/python-dateutil-2.8.2.tar.gz"
+    sha256 "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
   end
 
   def install

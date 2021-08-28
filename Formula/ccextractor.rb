@@ -1,17 +1,17 @@
 class Ccextractor < Formula
   desc "Free, GPL licensed closed caption tool"
   homepage "https://www.ccextractor.org/"
-  url "https://github.com/CCExtractor/ccextractor/archive/v0.91.tar.gz"
-  sha256 "9df507fc13777e46e97f886c76b05a36c0d26464e1e567173118295127b857ff"
+  url "https://github.com/CCExtractor/ccextractor/archive/v0.93.tar.gz"
+  sha256 "0e66d3e360db1b02a88271af11313ca4c9bbda1b03728e264a44c4c9f77192e3"
   license "GPL-2.0-only"
-  head "https://github.com/ccextractor/ccextractor.git"
+  head "https://github.com/ccextractor/ccextractor.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_big_sur: "516389be1ca69d2ebbaa7f8694874c5df1a05fa7e91b46a669ec925e4de5c97c"
-    sha256 cellar: :any,                 big_sur:       "fa4be877a0561e69a3c8b38e4b4fe3d26724cf68fb3dbf3a8df3569846c0e213"
-    sha256 cellar: :any,                 catalina:      "cd523a282a74a312a62482046d0cda08dcae62b37862746fd47b5325be618d8a"
-    sha256 cellar: :any,                 mojave:        "20c043838a1028d62f11bcaa63d358a90b5dbe9f6781601f86882738e1be862f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1962de3666f42c459eb1233f9e71b849c9d64a881f0652104d92677f6ad6346e"
+    sha256 cellar: :any,                 arm64_big_sur: "6efaaf1c5561ca5b8111ec6d5c4a218478b1ab516879eeed63c253413c29a0fd"
+    sha256 cellar: :any,                 big_sur:       "0a1b989824260d96acce3c9e918d931b59cd3ccebb4be4a3b076d6b7b0829d8a"
+    sha256 cellar: :any,                 catalina:      "ca8aa899175221e1fe2bd7a1fb2fe5b955e130f0abf0ab9ae6d03c99732b7a3a"
+    sha256 cellar: :any,                 mojave:        "196b7762b3ca019d7a99b678759a0b317e29f15cdd64e19ca7512dd6cd25a6ec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9ff529cb0ced01ab4a410bb3e28f51cedaec71394560fabad5f6060522090ddf"
   end
 
   depends_on "pkg-config" => :build

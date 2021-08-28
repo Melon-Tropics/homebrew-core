@@ -1,8 +1,8 @@
 class FlowCli < Formula
   desc "Command-line interface that provides utilities for building Flow applications"
   homepage "https://onflow.org"
-  url "https://github.com/onflow/flow-cli/archive/v0.27.0.tar.gz"
-  sha256 "0d3668c672b296b8a928ff30cb499e03ede72756a5ef50f7b2e2b802fe4d1543"
+  url "https://github.com/onflow/flow-cli/archive/v0.28.1.tar.gz"
+  sha256 "a7b2cde005f8b29555ec27239ba4bdeacafad865ee3635a9a867f4986ffa68ff"
   license "Apache-2.0"
   head "https://github.com/onflow/flow-cli.git"
 
@@ -12,11 +12,11 @@ class FlowCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_big_sur: "3003ea3b5b1f97477da57cec6e06829e946932ecc25f49ccd8680a24efcb50d8"
-    sha256 cellar: :any_skip_relocation, big_sur:       "5a7c51f4ad7f9973d276b90b16291cf7358731b18664670bb2f0a2d8400cdddd"
-    sha256 cellar: :any_skip_relocation, catalina:      "712bd6370220331d524f96f7b117108fd098fee916acbe6aa015b8e9e0fd30e2"
-    sha256 cellar: :any_skip_relocation, mojave:        "584940cc8a8c956ea3b8b52718fa70c49cedb689fe58adf0258332a4a35fe27b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b221fc9f0cad54cc7821d76175e870e7aca4be16fd84b7c85c7a9861997dafc9"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "dff663444b06758897036c0c1f1130c95ead7001406ee65e6e10ea63edbe70d5"
+    sha256 cellar: :any_skip_relocation, big_sur:       "37372844bf21bc507fcece25a0765e606a7a65ec9305bb189d2a58378d908043"
+    sha256 cellar: :any_skip_relocation, catalina:      "d89ff0d5a240554afa5c93d7b94f3179be2dc302d72f719f45d064acbc657232"
+    sha256 cellar: :any_skip_relocation, mojave:        "873699d0c2cfe18dbc8de97df68e5c4b29f594f9da4480d23cedcd29427ee715"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a1ecffd22f64f4d29ec7430f740c2c5a253db005920f5bd03cfca33459ff4e90"
   end
 
   depends_on "go" => :build
